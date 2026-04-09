@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body style="margin:0; background:transparent;">
+<h1 id="win" style="color:white; font-size:50px;">WIN: 0</h1>
+
+<script>
+let win = 0;
+
+function updateWin() {
+    document.getElementById("win").innerText = "WIN: " + win;
+}
+
+function addWin() {
+    win++;
+    updateWin();
+}
+
+// Tes otomatis tiap 5 detik
+setInterval(addWin, 5000);
+</script>
+
+</body>
+</html>
