@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
-<body style="margin:0; background:transparent;">
-<h1 id="win" style="color:white; font-size:50px;">WIN: 0</h1>
+<body style="margin:0; background:transparent; overflow:hidden;">
+<h1 id="win" style="color:white; font-size:60px; font-family:sans-serif;">
+WIN: 0
+</h1>
 
 <script>
 let win = 0;
@@ -10,11 +12,20 @@ function updateWin() {
     document.getElementById("win").innerText = "WIN: " + win;
 }
 
-function addWin() {
-    win++;
-    updateWin();
-}
+// KEYBIND ALT
+document.addEventListener("keydown", function(e) {
+    if (e.altKey && (e.key === "+" || e.key === "=")) {
+        win++;
+    } 
+    else if (e.altKey && e.key === "-") {
+        win--; // sekarang boleh minus
+    } 
+    else if (e.altKey && e.key === "0") {
+        win = 0; // reset (ALT + 0)
+    }
 
+    updateWin();
+});
 </script>
 
 </body>
